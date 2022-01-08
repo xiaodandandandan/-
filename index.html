@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商城 - Xiaomi 11 Ultra、Redmi K40 Pro、MIX FOLD，小米电视官方网站</title>
+    <!-- 引入重置样式表 -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 引入公共的样式表 -->
+    <link rel="stylesheet" href="./css/base.css">
+    <!-- 引入当前页面的样式表 -->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- 引入iconfont图标库 -->
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_3120759_zi7ciy4j9n.css">
+</head>
+<body>
+     <!-- 侧边工具栏 -->
+     <div class="aside-nav">
+        <ul class="aside-nav-container">
+            <li class="first">
+                <a href="#">
+                    <em class="iconfont icon-shouji"></em>
+                </a>
+                <div class="qrcode">
+                    <img src="./img/download.png" alt="">
+                    <span>扫码领取新人百元礼包</span>
+                </div>
+            </li>
+            <li>
+                <a href="#"><em class="iconfont icon-geren"></em></a>
+                <div class="left">
+                    个人中心
+                </div>
+            </li>
+            <li>
+                <a href="#"><em class="iconfont icon-editor2"></em></a>
+                <div class="left">
+                    售后服务
+                </div>
+            </li>
+            <li>
+                <a href="#"><em class="iconfont icon-24gf-headset"></em></a>
+                <div class="left">
+                    人工客服
+                </div>
+            </li>
+            <li>
+                <a href="#"><em class="iconfont icon-gouwuchekong"></em></a>
+                <div class="left">
+                    购物车
+                </div>
+            </li>
+            <!-- 下拉一定距离出现返回顶部按钮由JS实现 -->
+            <li id="go-top">
+                <a href="#top"><em class="iconfont icon-huidingbu"></em></a>
+                <div class="left">
+                    回顶部
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- 顶部导航条 -->
+    <div class="header">
+        <!-- 顶部导航条容器 -->
+        <div class="site-bar">
+            <!-- 顶部导航条 -->
+            <div class="topbar clearfix">
+                <!-- 导航list容器 -->
+                <div class="topbar-nav">
+                    <a href="javascript:;" class="item">小米商城</a>
+                    <span class="spacer"></span>
+                    <a href="javascript:;" class="item">MIUI</a>
+                    <span class="spacer"></span>
+                    <a href="javascript:;" class="item">IoT</a>
+                    <span class="spacer"></span>
+                    <a href="javascript:;" class="item">云服务</a>
+                    <span class="spacer"></span>
+                    <a href="javascript:;" class="item">天星数科</a>
+                    <span class="spacer"></span>
+                    <a href="javascript:;" class="item">有品</a>
+                    <span class="spacer"></span>
+                    <a href="javascript:;" class="item">小爱开放平台</a>
+                    <span class="spacer"></span>
+                    <a href="javascript:;" class="item">企业团购</a>
+                    <span class="spacer"></span>
+                    <a href="javascript:;" class="item">资质证照</a>
+                    <span class="spacer"></span>
+                    <a href="javascript:;" class="item">协议规则</a>
+                    <span class="spacer"></span>
+                    <a href="javascript:;" class="item app" id="J_siteDownloadApp">
+                        下载app
+                        <span class="appcode">
+                            <img src="./img/download.png" alt="小米商城" width="90" height="90">
+                            小米商城APP
+                        </span>
+                    </a>
+                    <span class="spacer"></span>
+                    <a href="javascript:;" class="item">智能生活</a>
+                    <span class="spacer"></span>
+                    <a href="javascript:;" class="item">Select Location</a>
+                </div>
+                <!-- 购物车容器 -->
+                <div class="miniCartTrigger">
+                    <a href="javascript:;" class="mini-cart">
+                        <em class="iconfont icon-gouwuchekong"></em>
+                        购物车
+                        <span class="mini-cart-num">(0)</span>
+                    </a>
+                   <div class="cart-menu">
+                    <span class="text">购物车中还没有商品，赶紧选购吧！</span>
+                   </div>
+                </div>
+                <!-- 用户信息容器 -->
+                <div class="siteUserInfo">
+                    <a href="" class="item">登录</a>
+                    <span class="spacer"></span>
+                    <a href="" class="item">注册</a>
+                    <span class="spacer"></span>
+                    <a href="" class="item">消息通知</a>
+                </div>
+            </div>
+        </div>
+        <!--创建头部的外部容器-->
+        <div class="site-header">
+            <div class="container clearfix">
+                <!-- 创建头部logo -->
+                <div class="site-logo">
+                    <a href="//www.mi.com/index.html" title="小米官网" class="logo">小米官网</a>
+                </div>
+                <!-- 头部导航栏容器 -->
+                <div class="site-header-nav clearfix">
+                    <ul class="nav-list clearfix">
+                        <!-- 导航第一项全部商品分类 -->
+                        <li class="nav-category" id="J_navCategory">
+                            <a href="/" class="link-category">
+                                <span class="text">全部商品分类</span>
+                            </a>
+                            <!-- 左侧边栏导航容器 -->
+                            <div class="site-category">
+                                <ul class="site-category-list">
+                                    <!-- 左侧边栏导航条目 -->
+                                    <li class="category-item">
+                                        <a href="/" class="cate-link clearfix">
+                                            <span class="text">手机</span>
+                                            <i class="iconfont icon-arrow-right"></i>
+                                        </a>
+                                        <!-- 鼠标移入左侧导航每一项后出现的右侧隐藏层 -->
+                                        <div class="children children-col-4 clearfix">
+                                            <ul class="children-wrapper-col">
+                                                <li class="item ">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="children-wrapper-col">
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="children-wrapper-col">
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <ul class="children-wrapper-col">
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                                <li class="item">
+                                                    <a href="/" class="title clearfix">
+                                                        <img src="./img/xiaomi12Pro.webp" alt="">
+                                                        <span class="text ">Xiaomi 12 pro</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="category-item">
+                                        <a href="/" class="cate-link clearfix">
+                                            <span class="text">电视</span>
+                                            <i class="iconfont icon-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="category-item">
+                                        <a href="/" class="cate-link clearfix">
+                                            <span class="text">笔记本 平板</span>
+                                            <i class="iconfont icon-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="category-item">
+                                        <a href="/" class="cate-link clearfix">
+                                            <span class="text">家电</span>
+                                            <i class="iconfont icon-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="category-item">
+                                        <a href="/" class="cate-link clearfix">
+                                            <span class="text">出行 穿戴</span>
+                                            <i class="iconfont icon-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="category-item">
+                                        <a href="/" class="cate-link clearfix">
+                                            <span class="text">智能 路由器</span>
+                                            <i class="iconfont icon-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="category-item">
+                                        <a href="/" class="cate-link clearfix">
+                                            <span class="text">电源 配件</span>
+                                            <i class="iconfont icon-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="category-item">
+                                        <a href="/" class="cate-link clearfix">
+                                            <span class="text">健康 儿童</span>
+                                            <i class="iconfont icon-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="category-item">
+                                        <a href="/" class="cate-link clearfix">
+                                            <span class="text">耳机 音箱</span>
+                                            <i class="iconfont icon-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                    <li class="category-item">
+                                        <a href="/" class="cate-link clearfix">
+                                            <span class="text">生活 箱包</span>
+                                            <i class="iconfont icon-arrow-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="link first-item">
+                                <span class="text">Xiaomi手机</span>
+                            </a>
+                            <div class="item-children">
+                                <ul class="children-container clearfix">
+                                    <li class="item first">
+                                        <a href="#" class="item-link">
+                                            <div class="item-image"><img src="./img/xiaomi12pro1.webp" alt=""></div>
+                                            <div class="item-title">Xiaomi 12 Pro</div>
+                                            <p class="price">4699起</p>
+                                        </a>
+                                    </li>
+                                    <span class="spacer"></span>
+                                    <li class="item">
+                                        <a href="#" class="item-link">
+                                            <div class="item-image"><img src="./img/xiaomi12pro1.webp" alt=""></div>
+                                            <div class="item-title">Xiaomi 12 Pro</div>
+                                            <p class="price">4699起</p>
+                                        </a>
+                                    </li>
+                                    <span class="spacer"></span>
+                                    <li class="item">
+                                        <a href="#" class="item-link">
+                                            <div class="item-image"><img src="./img/xiaomi12pro1.webp" alt=""></div>
+                                            <div class="item-title">Xiaomi 12 Pro</div>
+                                            <p class="price">4699起</p>
+                                        </a>
+                                    </li>
+                                    <span class="spacer"></span>
+                                    <li class="item">
+                                        <a href="#" class="item-link">
+                                            <div class="item-image"><img src="./img/xiaomi12pro1.webp" alt=""></div>
+                                            <div class="item-title">Xiaomi 12 Pro</div>
+                                            <p class="price">4699起</p>
+                                        </a>
+                                    </li>
+                                    <span class="spacer"></span>
+                                    <li class="item">
+                                        <a href="#" class="item-link">
+                                            <div class="item-image"><img src="./img/xiaomi12pro1.webp" alt=""></div>
+                                            <div class="item-title">Xiaomi 12 Pro</div>
+                                            <p class="price">4699起</p>
+                                        </a>
+                                    </li>
+                                    <span class="spacer"></span>
+                                    <li class="item">
+                                        <a href="#" class="item-link">
+                                            <div class="item-image"><img src="./img/xiaomi12pro1.webp" alt=""></div>
+                                            <div class="item-title">Xiaomi 12 Pro</div>
+                                            <p class="price">4699起</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="link">
+                                <span class="text">Redmi 红米</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="link">
+                                <span class="text">电视</span>
+                            </a>
+                
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="link">
+                                <span class="text">笔记本</span>
+                            </a>
+                        
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="link">
+                                <span class="text">平板</span>
+                            </a>
+                            
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="link">
+                                <span class="text">家电</span>
+                            </a>
+                            
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="link">
+                                <span class="text">路由器</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="link">
+                                <span class="text">服务</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="javascript:;" class="link last-item">
+                                <span class="text">社区</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 头部搜索栏容器 -->
+                <div class="site-search">
+                    <form class="search" action="#">
+                        <input type='search' autocomplete="off" spellcheck="false" class="input">
+                        <a href="#" class="search-logo">
+                            <i class="iconfont search-btn icon-sousuo"></i>
+                        </a>
+                    </form>
+                </div>
+                <!-- 创建banner容器 -->
+            </div>
+        </div>      
+    </div>
+    <!-- 轮播图及四小块容器 -->
+    <div class="home-hero-container">
+        <div class="home-hero">
+            <div class="banner-container">
+                <div class="banner">
+                    <div class="banner-image">
+                        <a href="#" class="link">
+                            <img src="./img/banner1.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="banner-image">
+                        <a href="#" class="link">
+                            <img src="./img/banner1.jpg" alt="">
+                        </a>
+                    </div>
+                   <ul class="pick">
+                       <li class="pick-item"></li>
+                       <li class="pick-item"></li>
+                   </ul>
+                </div>
+            </div>
+            <div class="home-hero-sub clearfix">
+                <div class="span1">
+                    <ul class="row">
+                        <li>
+                            <a href="#">
+                                <img src="./img/sub-icon1.png" alt="">
+                                保障服务
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sub-icon2.png" alt="">
+                                企业团购
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sub-icon3.png" alt="">
+                                F码通道
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sub-icon4.png" alt="">
+                                米粉卡
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sub-icon5.png" alt="">
+                                以旧换新
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sub-icon6.png" alt="">
+                                话费充值
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="span2">
+                    <ul class="span2-container clearfix">
+                        <li class="span2-image first">
+                            <a href="#" class="image">
+                                <img src="./img/1.jpg" alt="">
+                            </a>
+                        </li>
+                        <li class="span2-image">
+                            <a href="#" class="image">
+                                <img src="./img/2.png" alt="">
+                            </a>
+                        </li>
+                        <li class="span2-image last">
+                            <a href="#" class="image">
+                                <img src="./img/3.jpeg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <!-- footer底部容器 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-service">
+                <ul class="service-container">
+                    <li>
+                        <a href="#">
+                            <em class="iconfont icon-editor2"></em>
+                            预约维修服务
+                        </a>
+                    </li>
+                    <span class="spacer"></span>
+                    <li>
+                        <a href="#"><em class="iconfont icon-7tiantuihuanhuo"></em>7天无理由退货</a>
+                    </li>
+                    <span class="spacer"></span>
+                    <li>
+                        <a href="#"><em class="iconfont icon-15tianwuliyoutuihuo"></em>15天免费退换</a>
+                    </li>
+                    <span class="spacer"></span>
+                    <li>
+                        <a href="#"><em class="iconfont icon-liwuhuodong"></em>满69包邮</a>
+                    </li>
+                    <span class="spacer"></span>
+                    <li>
+                        <a href="#"><em class="iconfont icon-didian"></em>520余家售后网点</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <div class="links-container">
+                    <dl class="col-links">
+                        <dt>帮助中心</dt>
+                        <dd>
+                            <a href="#">账户管理</a>
+                        </dd>
+                        <dd><a href="#">购物指南</a></dd>
+                        <dd><a href="#">订单操作</a></dd>
+                    </dl>
+                    <dl class="col-links">
+                        <dt>服务支持</dt>
+                        <dd>
+                            <a href="#">售后政策</a>
+                        </dd>
+                        <dd><a href="#">自助服务</a></dd>
+                        <dd><a href="#">相关下载</a></dd>
+                    </dl>
+                    <dl class="col-links">
+                        <dt>线下门店</dt>
+                        <dd>
+                            <a href="#">小米之家</a>
+                        </dd>
+                        <dd><a href="#">服务网点</a></dd>
+                        <dd><a href="#">授权体验店/专区</a></dd>
+                    </dl>
+                    <dl class="col-links">
+                        <dt>关于小米</dt>
+                        <dd>
+                            <a href="#">了解小米</a>
+                        </dd>
+                        <dd><a href="#">加入小米</a></dd>
+                        <dd><a href="#">投资者关系</a></dd>
+                        <dd><a href="#">企业社会责任</a></dd>
+                        <dd><a href="#">廉洁举报</a></dd>
+                    </dl>
+                    <dl class="col-links">
+                        <dt>关注我们</dt>
+                        <dd>
+                            <a href="#">新浪微博</a>
+                        </dd>
+                        <dd><a href="#">官方微信</a></dd>
+                        <dd><a href="#">联系我们</a></dd>
+                        <dd><a href="#">公益基金会</a></dd>
+                    </dl>
+                    <dl class="col-links">
+                        <dt>特色服务</dt>
+                        <dd>
+                            <a href="#">F码通道</a>
+                        </dd>
+                        <dd><a href="#">礼物码</a></dd>
+                        <dd><a href="#">防伪查询</a></dd>
+                    </dl>
+                </div>
+                <span class="spacer"></span>
+                <div class="col-info">
+                    <p class="tel">400-100-5678</p>
+                    <p>8:00-18:00（仅收市话费）</p>
+                    <a href="#" class="btn">
+                        <em class="iconfont icon-weixin"></em>
+                        人工客服
+                    </a>
+                    <div class="follow">
+                        关注小米：
+                        <a href="#"><em class="iconfont icon-weibo"></em></a>
+                        <a href="#"><em class="iconfont icon-weixin"></em></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
