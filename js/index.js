@@ -19,6 +19,11 @@ console.log(banner.children);
 var pick = document.querySelector(".banner-container .pick");
 var l_btn = document.querySelector('.left-btn');
 var r_btn = document.querySelector('.right-btn');
+var go_top = document.querySelector("#go-top")
+//优雅地返回顶部
+go_top.addEventListener('click',function(){
+    animate(window,0)
+})
 
 var len = banner.children.length;
 //根据图片的多少往ul里添加小圆点
